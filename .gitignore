@@ -44,6 +44,7 @@ Temporary Items
 
 # Don't push PyCharm IDE config to server
 .idea/
+logs/
 
 # Test database
 db.sqlite3

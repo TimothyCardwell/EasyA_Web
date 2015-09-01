@@ -81,6 +81,8 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+    <div>{{ request.session.username }}</div>
+    <div>{{ request.session.isLoggedIn }}</div>
 <div class="container-fluid">
     {% block content %}{% endblock %}
 </div>

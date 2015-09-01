@@ -57,6 +57,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
 # Update this to a memory cache in prod
 CACHES = {
     'default': {
@@ -107,3 +109,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
   os.path.join(PROJECT_ROOT, 'static/'),
 )
+
+REST_URL = 'http://127.0.0.1:8000/api/'

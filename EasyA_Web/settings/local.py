@@ -27,7 +27,7 @@ LOGGING = {
         }
     },
     'loggers': {
-        'django': {
+        'rest_api': {
             'handlers': ['console', 'file'],
             'propagate': True,
             'level': 'DEBUG',

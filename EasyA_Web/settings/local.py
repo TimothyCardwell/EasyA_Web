@@ -44,7 +44,7 @@ LOGGING = {
 
 # Authentication
 # See the Auth section in https://docs.djangoproject.com/en/1.8/ref/settings/
-# When the time comes to implement authentication into this API
+# When the time comes to implement security into this API
 # https://docs.djangoproject.com/en/1.8/topics/auth/#module-django.contrib.auth
 
 # MEDIA_ROOT

@@ -1,3 +1,4 @@
 angular.module('easyA', [
-    "ngCookies"
+    "ngCookies",
+    "ngAnimate"
 ]);

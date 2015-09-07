@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Easy A - Questions{% endblock %}
+{% load staticfiles %}
+{% block content %}
+    {% verbatim %}
+    <div class="row" ng-controller="QuestionsController as questions">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" ng-model="questions.tagFilter" placeholder="Search Tags"
+                           ng-model-options="{ debounce: 500}" ng-change="questions.filter()" />
+                </div>
+            </div>
+            <br />
+            <div class="row slide" ng-repeat="q in questions.questionList">
+                <div class="col-md-12">
+                    <div class="panel panel-info" ng-click="questions.loadDetails(q); showdetails = !showdetails;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{ q.name }}</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="row" ng-hide="showdetails">
+                                <div class="col-md-11">{{ q.description }}</div>
+                                <div class="col-md-1">{{ q.price }}</div>
+                            </div>
+                            <div class="row" ng-show="q.loaded && showdetails">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam ultricies magna vel ultrices.
+                                Aliquam scelerisque imperdiet metus. Integer hendrerit, ligula eu suscipit tempus, mauris ligula
+                                gravida nulla, in consequat ligula nisi eu mauris. Nulla non metus posuere, vestibulum lorem in,
+                                cursus ligula. Duis molestie, nisi sed mollis feugiat, leo arcu eleifend dolor, ac ultricies augue
+                                magna vitae est. Aenean tincidunt, leo eget tincidunt tempus, nulla magna pharetra nisl, sit amet
+                                dapibus eros leo vel mi. Fusce id gravida justo, a pretium magna. Sed nec sem ligula. Quisque non
+                                eleifend enim. Praesent tincidunt fringilla nisl, vitae lobortis sapien eleifend at. Pellentesque
+                                habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                                <img src="http://www.techyard.net/wp-content/uploads/imgs/sample-pdf-file.jpg" />
+
+                                <p>Donec risus odio, placerat sed metus ut, tincidunt auctor eros. Vestibulum rhoncus ante id tellus
+                                ultrices ornare. Integer accumsan eros dui, id egestas urna maximus ut. Morbi ac purus fermentum,
+                                vehicula justo ac, porttitor ipsum. Phasellus ultrices metus a leo eleifend, in vehicula nibh varius.
+                                Etiam venenatis elit erat, eget malesuada ipsum viverra a. Nulla condimentum convallis condimentum.
+                                Duis quis dignissim massa, sit amet pretium tellus. Vestibulum sollicitudin neque ut purus fringilla
+                                tristique. Nulla imperdiet molestie nunc, mattis maximus mi feugiat vel. Aenean eget semper turpis.
+                                Pellentesque ullamcorper fringilla ligula non convallis. Ut a semper eros, et pharetra elit. Mauris
+                                porta suscipit elementum. Etiam in bibendum felis. Suspendisse potenti.</p>
+
+                                <p>Nunc eu justo sed nulla pretium congue in eu massa. Suspendisse molestie commodo ex, at sagittis odio
+                                facilisis non. Proin mollis consectetur tellus ac vestibulum. Morbi pulvinar bibendum lacus, in
+                                imperdiet eros. Curabitur convallis erat non tincidunt accumsan. Maecenas sed vestibulum felis.
+                                Maecenas ultrices mattis mi sit amet porttitor. Proin non diam dignissim, ornare tortor cursus,
+                                malesuada sem. Proin lacinia pulvinar ante non lobortis. Nulla ut diam ut diam fringilla placerat ac
+                                ut elit. Fusce vitae augue at magna ullamcorper molestie. Duis consequat feugiat ex in cursus. Nam
+                                eros felis, interdum eu luctus sed, viverra eget metus. Aenean ullamcorper, lectus in efficitur
+                                placerat, quam ante pharetra mauris, vel malesuada velit orci et purus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endverbatim %}
+{% endblock %}
